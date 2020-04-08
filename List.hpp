@@ -80,7 +80,7 @@ public:
 	 * \brief Used for: List<Derived> { Base* array, int count } where Derived is an object
 	 */
 	template <typename TBase, typename Integral, typename IntegralDummy = Integral, typename TBaseDummy = TBase, typename TDummy = T>
-	List(TBase* pArray, Integral count, IsBaseOf(TBaseDummy, NormalType), std::enable_if_t<std::is_base_of_v<TBaseDummy, TDummy>>* = nullptr, ForIntegrals, ForObjectList) : Base(count)
+	List(TBase* pArray, Integral count, IsBaseOf(TBaseDummy, NormalType), ForIntegrals, ForObjectList) : Base(count)
 	{
 		NormalType derivedObject{};
 		for (auto i = 0; i < count; i++)
